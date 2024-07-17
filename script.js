@@ -1,5 +1,5 @@
-// /const API_KEY = "sk-proj-q4Kvxkamq3htM8YcLfXHT3BlbkFJnVQBEMCVPcWdtRJsmOaU"; // Replace with your OpenAI API key
-const API_KEY = "sk-proj-8dI1zgxyoGLa3AQI3OW7T3BlbkFJarB5ab60bRZdxcflMOb2";
+ const API_KEY = "sk-proj-q4Kvxkamq3htM8YcLfXHT3BlbkFJnVQBEMCVPcWdtRJsmOaU"; // Replace with your OpenAI API key
+//const API_KEY = "sk-proj-8dI1zgxyoGLa3AQI3OW7T3BlbkFJarB5ab60bRZdxcflMOb2";
 const OPENAI_MODEL = 'gpt-4o'
 const INSTRUCTIONS = `You are a helpful assistant. Limit your responses to 1-2 sentences.`
 
