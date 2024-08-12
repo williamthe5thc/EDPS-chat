@@ -17,6 +17,7 @@ const result = await client.predict("/chat", {
 		param_3: [handle_file('https://github.com/gradio-app/gradio/raw/main/test/test_files/sample_file.pdf')], 		
 		param_4: "Hello!!", 
 });
+
 from gradio_client import Client, file
 
 client = Client("http://localhost:8001/")
@@ -48,6 +49,40 @@ client.predict(
 console.log(result.data);
 
 console.log(result.data);
+
+import { Client } from "@gradio/client";
+
+const app = await Client.connect("http://localhost:8001/");
+					
+await client.predict(
+  "/_set_current_mode", {
+    mode: "RAG",
+});
+						
+await client.predict(
+  "/_clear_and_save_textbox", {
+    message: "what course is this?",
+});
+						
+await client.predict(
+  "/lambda", 
+);
+						
+await client.predict(
+  "/_display_input", 
+);
+						
+await client.predict(
+  "/_stream_fn", {
+    param_2: "null",
+    param_3: None,
+    param_4: "RAG",
+});
+						
+await client.predict(
+  "/lambda_2", 
+);
+						
 
 const chatbotToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
