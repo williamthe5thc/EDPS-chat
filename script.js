@@ -17,6 +17,33 @@ const result = await client.predict("/chat", {
 		param_3: [handle_file('https://github.com/gradio-app/gradio/raw/main/test/test_files/sample_file.pdf')], 		
 		param_4: "Hello!!", 
 });
+from gradio_client import Client, file
+
+client = Client("http://localhost:8001/")
+
+client.predict(
+  message="hello",
+  api_name="/_clear_and_save_textbox"
+)
+
+client.predict(
+  api_name="/lambda"
+)
+
+client.predict(
+  api_name="/_display_input"
+)
+
+client.predict(
+  param_2=None,
+  param_3=None,
+  param_4="Basic",
+  api_name="/_stream_fn"
+)
+
+client.predict(
+  api_name="/lambda_2"
+)
 
 console.log(result.data);
 
