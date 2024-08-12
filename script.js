@@ -1,7 +1,26 @@
- const API_KEY = "sk-proj-q4Kvxkamq3htM8YcLfXHT3BlbkFJnVQBEMCVPcWdtRJsmOaU"; // Replace with your OpenAI API key
-//const API_KEY = "sk-proj-8dI1zgxyoGLa3AQI3OW7T3BlbkFJarB5ab60bRZdxcflMOb2";
-const OPENAI_MODEL = 'gpt-4o'
-const INSTRUCTIONS = `You are a helpful assistant. Limit your responses to 1-2 sentences.`
+//  const API_KEY = "sk-proj-q4Kvxkamq3htM8YcLfXHT3BlbkFJnVQBEMCVPcWdtRJsmOaU"; // Replace with your OpenAI API key
+// //const API_KEY = "sk-proj-8dI1zgxyoGLa3AQI3OW7T3BlbkFJarB5ab60bRZdxcflMOb2";
+// const OPENAI_MODEL = 'gpt-4o'
+// const INSTRUCTIONS = `You are a helpful assistant. Limit your responses to 1-2 sentences.`
+import { Client } from "@gradio/client";
+
+const client = await Client.connect("http://localhost:8001/");
+const result = await client.predict("/_upload_file", { 		
+		files: [handle_file('https://github.com/gradio-app/gradio/raw/main/test/test_files/sample_file.pdf')], 
+});
+
+
+const client = await Client.connect("http://localhost:8001/");
+const result = await client.predict("/chat", { 		
+		message: "Hello!!", 		
+		mode: "RAG", 		
+		param_3: [handle_file('https://github.com/gradio-app/gradio/raw/main/test/test_files/sample_file.pdf')], 		
+		param_4: "Hello!!", 
+});
+
+console.log(result.data);
+
+console.log(result.data);
 
 const chatbotToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
